@@ -11,3 +11,5 @@ Staircase lighting powered by ESP8266 (WEMOS(LOLIN) D1 mini) including ESP8266 c
 > - [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
 > - [FastLED](https://github.com/FastLED/FastLED)
 > - [WiFiManager](https://github.com/tzapu/WiFiManager)
+
+More info in [Wiki](https://github.com/Reflexxion19/ESP8266_Staircase_lighting-PC_SOFTWARE-APP/wiki)
