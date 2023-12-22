@@ -22,5 +22,65 @@ namespace ConsoleApplication2udp.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ESP8266_IP {
+            get {
+                return ((string)(this["ESP8266_IP"]));
+            }
+            set {
+                this["ESP8266_IP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ConnectionEstablished {
+            get {
+                return ((bool)(this["ConnectionEstablished"]));
+            }
+            set {
+                this["ConnectionEstablished"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ReturnData {
+            get {
+                return ((string)(this["ReturnData"]));
+            }
+            set {
+                this["ReturnData"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MyIP {
+            get {
+                return ((string)(this["MyIP"]));
+            }
+            set {
+                this["MyIP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MyHostname {
+            get {
+                return ((string)(this["MyHostname"]));
+            }
+            set {
+                this["MyHostname"] = value;
+            }
+        }
     }
 }

@@ -95,7 +95,7 @@
 			this.textBox_ip.Name = "textBox_ip";
 			this.textBox_ip.Size = new System.Drawing.Size(119, 20);
 			this.textBox_ip.TabIndex = 6;
-			this.textBox_ip.Text = "192.168.152.251";
+			this.textBox_ip.Text = "192.168.3.251";
 			// 
 			// label3
 			// 
@@ -145,7 +145,6 @@
 			this.buttonStart.TabIndex = 28;
 			this.buttonStart.Text = "Start UDP";
 			this.buttonStart.UseVisualStyleBackColor = true;
-			this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
 			// 
 			// groupBox2
 			// 
@@ -204,8 +203,7 @@
 			this.textBoxMyIP.ReadOnly = true;
 			this.textBoxMyIP.Size = new System.Drawing.Size(218, 20);
 			this.textBoxMyIP.TabIndex = 24;
-			this.textBoxMyIP.Text = "192.168.152.109";
-			this.textBoxMyIP.Click += new System.EventHandler(this.textBoxMyIP_Click);
+			this.textBoxMyIP.Text = "192.168.3.109";
 			// 
 			// label2
 			// 
@@ -224,7 +222,7 @@
 			this.textBoxSender.ReadOnly = true;
 			this.textBoxSender.Size = new System.Drawing.Size(119, 20);
 			this.textBoxSender.TabIndex = 23;
-			this.textBoxSender.Text = "192.168.152.251";
+			this.textBoxSender.Text = "192.168.3.251";
 			// 
 			// label6
 			// 
@@ -293,6 +291,8 @@
 			this.Name = "formUDPConnection";
 			this.Text = "formUDPConnection";
 			this.Load += new System.EventHandler(this.formUDPConnection_Load);
+			this.Enter += new System.EventHandler(this.formUDPConnection_Enter);
+			this.Leave += new System.EventHandler(this.formUDPConnection_Leave);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);

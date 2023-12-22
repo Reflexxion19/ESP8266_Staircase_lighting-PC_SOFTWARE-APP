@@ -17,7 +17,7 @@ namespace ConsoleApplication2udp
         formSettingsESP8266 FormSettingsESP8266;
         formSettingsProgram FormSettingsProgram;
 
-        public Form1()
+		public Form1()
         {
             InitializeComponent();
             mdiProp();
@@ -27,7 +27,7 @@ namespace ConsoleApplication2udp
 			FormHome.MdiParent = this;
 			FormHome.Dock = DockStyle.Fill;
 			FormHome.Show();
-        }
+		}
 
         private void mdiProp()
         {
@@ -35,8 +35,8 @@ namespace ConsoleApplication2udp
             Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(232, 234, 237);
         }
 
-        //--------------GUI-------------
-        bool menuExpand = false;
+		//--------------GUI-------------
+		bool menuExpand = false;
 
 		private void timerMenuTransition_Tick(object sender, EventArgs e)
 		{
@@ -194,7 +194,8 @@ namespace ConsoleApplication2udp
 
 		private void Form1_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			//udpClient.Close();
+			//udpConnection.SendCloseMessage();
+
 			Environment.Exit(Environment.ExitCode);
 		}
 	}

@@ -11,17 +11,27 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net;
 using System.Net.Sockets;
+using ConsoleApplication2udp.Properties;
 
 namespace ConsoleApplication2udp
 {
 	public partial class formUDPConnection : Form
 	{
+		UDPSend udpConnection;
+
 		bool connectionEstablished = false;
+		string data = "";
+		string date = "";
 
 		public formUDPConnection()
 		{
 			InitializeComponent();
-			myIP();
+
+			udpConnection = new UDPSend();
+
+			Thread thdUDPServer = new Thread(new ThreadStart(serverThread));
+			thdUDPServer.IsBackground = true;
+			thdUDPServer.Start();
 		}
 
 		private void formUDPConnection_Load(object sender, EventArgs e)
@@ -29,89 +39,43 @@ namespace ConsoleApplication2udp
 			this.ControlBox = false;
 		}
 
-		private void button_send_Click(object sender, EventArgs e) //CLIENT
+		public void serverThread()
 		{
-			UdpClient udpClient = new UdpClient();
-			udpClient.Connect(textBox_ip.Text, Convert.ToInt16(textBox_port.Text));
-			Byte[] senddata = Encoding.ASCII.GetBytes(textBox_message.Text);
-			udpClient.Send(senddata, senddata.Length);
-		}
-
-
-
-		public void serverThread() //SERVER
-		{
-			UdpClient udpClient = new UdpClient(8080);
-			while (status)
+			if (!Properties.Settings.Default.ConnectionEstablished)
 			{
-				IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 8080);
-				Byte[] receiveBytes = udpClient.Receive(ref RemoteIpEndPoint);
-				string returnData = Encoding.ASCII.GetString(receiveBytes);
+				udpConnection.EstablishConnection();
+				bool udpStarted = true;
 
-
-				this.Invoke(new MethodInvoker(delegate ()
+				if (Properties.Settings.Default.ConnectionEstablished)
 				{
-					date = DateTime.Now.ToString("hh:mm:ss:fff;");
-					data = date + returnData;
-
-					if(returnData == "rlksc")
-					{
-						connectionEstablished = true;
-
-						udpClient.Connect(textBox_ip.Text, Convert.ToInt16(textBox_port.Text));
-						Byte[] senddata = Encoding.ASCII.GetBytes("yes");
-						udpClient.Send(senddata, senddata.Length);
-					}
-
-					if (connectionEstablished)
-					{
-						textBoxSender.Text = RemoteIpEndPoint.Address.ToString();
-						textBox_ip.Text = textBoxSender.Text;
-
-						richTextBoxDataReceived.AppendText(data + "\n");
-						richTextBoxDataReceived.ScrollToCaret();
-
-
-
-
-						if (checkBox_record.Checked == true)
-						{
-							richTextBox_dataSaved.AppendText(data + "\n");
-							richTextBox_dataSaved.ScrollToCaret();
-						}
-					}
+					connectionEstablished = true;
+					textBoxMyIP.Text = Properties.Settings.Default.MyIP + " | " + Properties.Settings.Default.MyHostname;
 				}
-
-
-
-				));
 			}
 
+			while (connectionEstablished)
+			{
+				if (checkBox_record.Checked)
+				{
+					this.Invoke(new MethodInvoker(delegate ()
+					{
+						date = DateTime.Now.ToString("hh:mm:ss:fff;");
+						data = date + Properties.Settings.Default.ReturnData;
 
+						textBoxSender.Text = Properties.Settings.Default.ESP8266_IP;
+						textBox_ip.Text = textBoxSender.Text;
 
+						richTextBox_dataSaved.AppendText(data + "\n");
+						richTextBox_dataSaved.ScrollToCaret();
+					}
+					));
+				}
+			}
 		}
 
-
-		string data = "";
-		string date = "";
-
-		string[] data_str = new string[25];
-
-
-
-		private void textBoxMyIP_Click(object sender, EventArgs e)
+		private void button_send_Click(object sender, EventArgs e)
 		{
-			myIP();
-		}
-
-		void myIP()
-		{
-			string hostName = Dns.GetHostName(); // Retrive the Name of HOST
-
-			//string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();
-			string myIP = "192.168.152.109"; //for testing purposes
-			textBoxMyIP.Text = myIP + " " + hostName;
-
+			udpConnection.SendMessage(textBox_message.Text);
 		}
 
 		private void button_clear_Click(object sender, EventArgs e)
@@ -119,23 +83,20 @@ namespace ConsoleApplication2udp
 			richTextBox_dataSaved.Text = "";
 		}
 
-		Boolean status = false;
-		private void buttonStart_Click(object sender, EventArgs e)
+		private void buttonRefresh_Click(object sender, EventArgs e)
 		{
-			Thread thdUDPServer = new Thread(new ThreadStart(serverThread));
+			udpConnection.GetDeviceIP();
+			textBoxMyIP.Text = Properties.Settings.Default.MyIP + " | " + Properties.Settings.Default.MyHostname;
+		}
 
-			thdUDPServer.IsBackground = true; //<-- Set the thread to work in background
-			thdUDPServer.Start();
-
-
-			status = true;
-			buttonStart.Visible = false;
+		private void formUDPConnection_Leave(object sender, EventArgs e)
+		{
 
 		}
 
-		private void buttonRefresh_Click(object sender, EventArgs e)
+		private void formUDPConnection_Enter(object sender, EventArgs e)
 		{
-			myIP();
+			
 		}
 	}
 }
