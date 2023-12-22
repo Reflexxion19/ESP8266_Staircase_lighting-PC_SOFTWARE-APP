@@ -1,0 +1,17 @@
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\bin\x64\Debug\ConsoleApplication2udp.exe.config
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\bin\x64\Debug\ConsoleApplication2udp.exe
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\bin\x64\Debug\ConsoleApplication2udp.pdb
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\bin\x64\Debug\ReaLTaiizor.dll
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\bin\x64\Debug\ReaLTaiizor.xml
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.csproj.AssemblyReference.cache
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.Form1.resources
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.formHome.resources
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.formSettingsESP8266.resources
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.formSettingsProgram.resources
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.formUDPConnection.resources
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.Properties.Resources.resources
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.csproj.GenerateResource.cache
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.csproj.CoreCompileInputs.cache
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.csproj.CopyComplete
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.exe
+D:\Github_Repos\ESP8266_Staircase_lighting-PC_SOFTWARE-APP\PC_SOFTWARE\ConsoleApplication2udp\obj\x64\Debug\ConsoleApplication2udp.pdb
